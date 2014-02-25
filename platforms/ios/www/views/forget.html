@@ -1,0 +1,33 @@
+<div>
+
+</div>
+<div class="vertical-center" ng-controller="forgetController">
+    <header class="logo">
+        <img src="img/logo-wide.png" height="42" width="167" alt="iChip"/>
+    </header>
+
+    <form class="reset-form">
+
+        <p class="text-center">Enter your email address to issue a password reset request.</p>
+
+        <p id="login_error_message" class="hidden alert alert-error">Error Message</p>
+
+        <input type="email" class="text" placeholder="Email" id="forget_email" ng-model="email">
+
+        <div>
+            <button class="form-submit btn" ng-click="return(forget_submit())">
+                Reset Password
+            </button>
+        </div>
+        <!--<a href="#reset" class="form-submit btn">Reset Password</a>-->
+    </form>
+</div>
+<div>
+    <a href="#login" class="sticky-btn">Cancel Reset Password</a>
+</div>
+
+<div id="spinner" style="display: none;" class="barn-doors">
+    <div class="door left"></div>
+    <div class="door right"></div>
+</div>
+</div>
