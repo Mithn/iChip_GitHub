@@ -1,57 +1,81 @@
+<!doctype html>
 <html  ng-app="ichip" >
 <head>
     <meta charset="utf-8" />
     <meta name="format-detection" content="telephone=no" />
     <meta name="viewport" content="user-scalable=no, initial-scale=1" />
 
-    <link rel="stylesheet" type="text/css" href="css/style.css"/>
-    
-    <!--<script type="text/javascript" src="plugins/nl.x-services.plugins.launchmyapp/www/ios/LaunchMyApp.js">-->
-    <!--</script>-->
-    
+    <link rel="stylesheet" type="text/css" href="css/app.css" />
+
     <title>iChip App</title>
+
 </head>
     
-<body id="deviceready">
+<body>
 
-    <!-- ANGULAR JS VIEW CONTAINER TO SHOW VIEWS -->
     <div class="container" ng-view></div>
-
 
     <script type="text/javascript" src="lib/jquery.min.js"></script>
 
-    <!-- ANGULAR JS LIBRARIES -->
     <script type="text/javascript" src="lib/angular.js"></script>
     <script type="text/javascript" src="lib/angular.min.js"></script>
     <script type="text/javascript" src="lib/angular-route.js"></script>
     <script type="text/javascript" src="lib/angular-resource.js"></script>
-
-    <!-- CORDOVA LIBRARIES -->
+    
     <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="cordova_plugins.js"></script>
 
-    <!-- USER DEFINED JAVASCRIPTS -->
     <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/resources.js"></script>
     <script type="text/javascript" src="js/services.js"></script>
-
-    <!-- VIEW CONTROLLERS JAVASCRIPTS -->
-    <script type="text/javascript" src="js/controller_login.js"></script>
-    <script type="text/javascript" src="js/controller_forget.js"></script>
-    <script type="text/javascript" src="js/controller_reset.js"></script>
-    <script type="text/javascript" src="js/controller_setpassword.js"></script>
-    <script type="text/javascript" src="js/controller_dashboard.js"></script>
+    <script type="text/javascript" src="js/controllers.js"></script>
 
 
-    <!--<script type="text/javascript" src="js/index.js"></script>-->
+    <script type="text/javascript" src="js/plugins/LaunchMyApp.java"></script>
+    <script type="text/javascript" src="js/plugins/webintent.js"></script>
 
 
     <script type="text/javascript">
-//            app.initialize();
-//            function handleOpenURL(url) {
-//                setTimeout(function() {
-//                           alert("received url: " + url);
-//                           }, 0);
-//            }
+
+        document.addEventListener("deviceready", function () {
+            document.addEventListener("menubutton", menuKeyDown, true);
+            document.addEventListener("backbutton", backKeyDown, true);
+        }, false);
+
+        function menuKeyDown() {
+//            alert('Menu button pressed.');
+        }
+
+        function backKeyDown() {
+//            alert('back button pressed.');
+        }
+
+         // for iOS
+        function handleOpenURL(url) {
+            setTimeout(function() {
+                alert("received url: " + url);
+                if(url !== "") {
+                    //Here we can parse the url .
+                    var link = url.split('=');
+                    var token = link[1];
+                    window.localStorage.setItem("token", token);
+                    alert(token);
+                }
+            }, 1000);
+        }
+
+        // For Android
+//        function GetCustomUrl() {
+//            window.plugins.webintent.getUri(function(url) {
+////                if(url !== "") {
+////                //Here we can parse the url .
+////                var link = url.split('=');
+////                var username = link[1];
+////                alert(username);
+////            }
+//                alert(url);
+//            });
+//        }
+
     </script>
 
 </body>

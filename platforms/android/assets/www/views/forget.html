@@ -1,29 +1,24 @@
-<div>
-
-</div>
-<div class="vertical-center" ng-controller="forgetController">
+<div class="vertical-center">
     <header class="logo">
-        <img src="img/logo-wide.png" height="42" width="167" alt="iChip"/>
+        <img src="img/logo-wide.png" height="42" width="167" alt="iChip" />
     </header>
 
-    <form class="reset-form">
+    <form name="forgetForm" class="reset-form" ng-submit="submitForm()">
 
         <p class="text-center">Enter your email address to issue a password reset request.</p>
 
-        <p id="login_error_message" class="hidden alert alert-error">Error Message</p>
+        <p class="block alert alert-{{messageType}}" ng-show="displayMessage">{{displayMessage}}</p>
 
-        <input type="email" class="text" placeholder="Email" id="forget_email" ng-model="email">
+        <input type="text" class="inputText" placeholder="Email" ng-model="data.forgetemail">
 
         <div>
-            <button class="form-submit btn" ng-click="return(forget_submit())">
+            <button type="submit" class="btn btn-lg btn-primary btn-block">
                 Reset Password
             </button>
         </div>
-        <!--<a href="#reset" class="form-submit btn">Reset Password</a>-->
     </form>
 </div>
-<div>
-    <a href="#login" class="sticky-btn">Cancel Reset Password</a>
+<a href="#setPassword" class="sticky-btn">Cancel Reset Password</a>
 </div>
 
 <div id="spinner" style="display: none;" class="barn-doors">

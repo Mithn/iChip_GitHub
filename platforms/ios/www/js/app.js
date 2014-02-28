@@ -1,23 +1,18 @@
-var ichip = angular.module("ichip", ["ngRoute"]);
+var ichip = angular.module("ichip", ["ngRoute", "ngResource"]);
 
-//constants
-ichip.constant('myConstants', {
-
-    email_regular_expression : /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/,
-    password_regular_expression :  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/,
-
-    app_SecreteKey: 'b5g56055-39g8-2233-cd60-11d154e83d56',
-    loginUrl: 'http://127.0.0.1:81/api/Authentication/Login'
-
+ichip.constant("$config", {
+    serviceUrl : "http://localhost/api/:methodName",
+    accountTokenKey : "accountToken",
+    sessionTokenKey : "sessionToken"
 });
 
 
-
-ichip.config(["$routeProvider", "$httpProvider", function ($route, $httpProvider) {
+ichip.config(["$routeProvider", "$httpProvider", "$locationProvider",function ($route, $httpProvider, $locationProvider) {
+    //$locationProvider.html5Mode(true);
 
     $route.when("/login", {
         templateUrl: "views/login.html",
-        controller: "LoginController"
+        controller: "loginController"
     });
 
     $route.when("/forget", {
@@ -31,23 +26,21 @@ ichip.config(["$routeProvider", "$httpProvider", function ($route, $httpProvider
         controller:"resetController"
     });
 
-    $route.when("/set-password", {
-        templateUrl:"views/set-password.html",
-        controller:"set-passwordController"
+    $route.when("/setPassword", {
+        templateUrl:"views/setPassword.html",
+        controller:"setPasswordController"
     });
 
 
-    $route.when("/dashboard", {
+   $route.when("/dashboard", {
         templateUrl: "views/dashboard.html",
-        controller: "DashboardController"
+        controller: "dashboardController"
     });
 
     $route.otherwise({ redirectTo: '/login' });
 
-
-//    $http.defaults.headers.common.Authorization = 'Basic'+ myConstants.app_SecreteKey;
-
     $httpProvider.defaults.headers.common["Content-Type"] = "application/json;charset=UTF-8";
+    $httpProvider.defaults.headers.common["deviceAppSecret"] = "b5g56055-39g8-2233-cd60-11d154e83d56";
     $httpProvider.defaults.useXDomain = true;
 
     delete $httpProvider.defaults.headers.common['X-Requested-With'];

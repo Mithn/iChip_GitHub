@@ -1,2 +1,2 @@
-/Users/admin/Desktop/LifeNexus_iChip/iChip/platforms/android/bin/AndroidManifest.xml : \
-/Users/admin/Desktop/LifeNexus_iChip/iChip/platforms/android/AndroidManifest.xml \
+/Users/admin/desktop/lifenexus_ichip/ichip/platforms/android/bin/AndroidManifest.xml : \
+/Users/admin/desktop/lifenexus_ichip/ichip/platforms/android/AndroidManifest.xml \

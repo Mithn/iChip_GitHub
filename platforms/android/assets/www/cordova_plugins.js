@@ -21,6 +21,20 @@ module.exports = [
         "clobbers": [
             "Connection"
         ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.inappbrowser/www/InAppBrowser.js",
+        "id": "org.apache.cordova.inappbrowser.InAppBrowser",
+        "clobbers": [
+            "window.open"
+        ]
+    },
+    {
+        "file": "plugins/nl.x-services.plugins.launchmyapp/www/android/LaunchMyApp.js",
+        "id": "nl.x-services.plugins.launchmyapp.LaunchMyApp",
+        "clobbers": [
+            "window.plugins.launchmyapp"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -28,7 +42,9 @@ module.exports.metadata =
 {
     "org.apache.cordova.console": "0.2.7",
     "org.apache.cordova.device": "0.2.8",
-    "org.apache.cordova.network-information": "0.2.7"
+    "org.apache.cordova.network-information": "0.2.7",
+    "org.apache.cordova.inappbrowser": "0.3.1",
+    "nl.x-services.plugins.launchmyapp": "3.1.1"
 }
 // BOTTOM OF METADATA
 });

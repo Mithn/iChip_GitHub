@@ -1,51 +1,26 @@
-<div>
 <div class="vertical-center">
     <header class="logo">
         <img src="img/logo-wide.png" height="42" width="167" alt="iChip" />
     </header>
 
-    <form class="login-form" ng-submit="processForm()">
+    <!-- LOGIN FORM -->
+    <form class="login-form" ng-submit="login()">
+        <p class="block alert alert-{{messageType}}" ng-show="displayMessage">{{displayMessage}}</p>
 
-        <!-- MESSAGES -->
-        <p id="incorrect_alert_message" class="hidden alert alert-error">
-            Email or Password Incorrect</p>
-        <p id="pass_reset_alert_message" class="hidden alert alert-success">
-            Password Reset Successful</p>
-        <p id="login_error_message" class="hidden alert alert-error">Error Message</p>
+        <input type="text" class="inputText" placeholder="Email" ng-model="data.email">
+        <input type="password" class="inputText" placeholder="Password" ng-model="data.password">
 
-
-        <!-- EMAIL -->
-        <input type="email" class="text" placeholder="Email" id="emaildiv" name="emaildiv">
-
-        <!-- PASSWORD -->
-        <input type="password" class="text" placeholder="Password" id="passdiv" name="passdiv">
-
-
-        <!-- SECURE LOGIN BUTTON -->
         <div>
             <button type="submit" class="btn btn-lg btn-primary btn-block">
                 <i class="icon icon-lock"></i>
                 Secure Login
             </button>
-            <!--            <a href="#" class="form-submit btn"><i class="icon icon-lock"></i> Secure Login</a>-->
         </div>
-
     </form>
 
-
 </div>
 
-<!-- FORGET PASSWORD BUTTON IN BOTTOM -->
-<div>
-    <a href="#forget" class="forgot-password sticky-btn">
-        <i class="icon icon-key"></i>
-        Forgot Password?
-    </a>
-</div>
-
-<!-- SPINNER -->
-<div id="spinner" style="display: none;" class="barn-doors">
-    <div class="door left"></div>
-    <div class="door right"></div>
-</div>
-</div>
+<a href="#forget" class="forgot-password sticky-btn">
+    <i class="icon icon-key"></i>
+    Forgot Password?
+</a>
