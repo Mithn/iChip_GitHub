@@ -19,6 +19,7 @@
 
 package com.ichip.poc;
 
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import org.apache.cordova.*;
 
@@ -29,8 +30,11 @@ public class iChip extends CordovaActivity
     {
         super.onCreate(savedInstanceState);
         super.init();
-        // Set by <content src="index.html" /> in config.xml
         
+        // Set Orientation as a PORTRAIT.
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+        // Set by <content src="index.html" /> in config.xml
         super.setIntegerProperty("splashscreen", R.drawable.splash);
 //        super.loadUrl(Config.getStartUrl(), 5000);
 

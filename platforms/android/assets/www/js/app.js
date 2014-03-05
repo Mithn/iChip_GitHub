@@ -1,9 +1,52 @@
 var ichip = angular.module("ichip", ["ngRoute", "ngResource"]);
 
+// Scripting Code
+document.addEventListener("deviceready", function () {
+
+    //** Find the Device Platform and Get the URL response from url Scheme and parse token from it.
+
+    if(device.platform === "Android") {
+        // Register Android EVENTs
+        document.addEventListener("menubutton", menuKeyDown, true);
+        document.addEventListener("backbutton", backKeyDown, true);
+
+
+    } else if (device.platform === "iOS"){
+        // Don't do anything for back and Menu Button
+
+
+    } else {
+        // For Other Platform Don't Do anything
+    }
+
+    function menuKeyDown() {
+//            alert('Menu button pressed.');
+    }
+
+    function backKeyDown() {
+//            alert('back button pressed.');
+    }
+
+}, false);
+
+
+// Constants Declaration
 ichip.constant("$config", {
     serviceUrl : "http://localhost/api/:methodName",
+
     accountTokenKey : "accountToken",
-    sessionTokenKey : "sessionToken"
+    sessionTokenKey : "sessionToken",
+
+    // Declaration of Global String
+    messageEmailPwdIncorrect : "Email or Password Incorrect",
+    messageEnterEmail : "Enter E-mail Address",
+    messageInvalidEmail : "Invalid E-mail Address",
+    messageEnterPwd : "Enter Password",
+    messageInvalidPwd : "Invalid Password",
+
+    messageErrorSending : "Error in Sending mail",
+    messageErrorShowPwd : "Error Response",
+    messagePwdNotMatch : "Password Does Not Matched"
 });
 
 
@@ -32,13 +75,14 @@ ichip.config(["$routeProvider", "$httpProvider", "$locationProvider",function ($
     });
 
 
-   $route.when("/dashboard", {
+    $route.when("/dashboard", {
         templateUrl: "views/dashboard.html",
         controller: "dashboardController"
     });
 
     $route.otherwise({ redirectTo: '/login' });
 
+    // Header Declaration
     $httpProvider.defaults.headers.common["Content-Type"] = "application/json;charset=UTF-8";
     $httpProvider.defaults.headers.common["deviceAppSecret"] = "b5g56055-39g8-2233-cd60-11d154e83d56";
     $httpProvider.defaults.useXDomain = true;

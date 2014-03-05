@@ -1,4 +1,5 @@
 /Users/admin/desktop/lifenexus_ichip/ichip/platforms/android/bin/classes.dex : \
+/Users/admin/desktop/lifenexus_ichip/ichip/platforms/android/bin/classes/com/borismus/webintent/WebIntent.class \
 /Users/admin/desktop/lifenexus_ichip/ichip/platforms/android/bin/classes/com/ichip/poc/BuildConfig.class \
 /Users/admin/desktop/lifenexus_ichip/ichip/platforms/android/bin/classes/com/ichip/poc/iChip.class \
 /Users/admin/desktop/lifenexus_ichip/ichip/platforms/android/bin/classes/com/ichip/poc/R$attr.class \

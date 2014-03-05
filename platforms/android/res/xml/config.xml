@@ -10,6 +10,9 @@
     <feature name="App">
         <param name="android-package" value="org.apache.cordova.App" />
     </feature>
+    <feature name="WebIntent">
+        <param name="android-package" value="com.borismus.webintent.WebIntent" />
+    </feature>
     <feature name="LaunchMyApp">
         <param name="android-package" value="nl.xservices.plugins.LaunchMyApp" />
     </feature>
@@ -67,7 +70,4 @@
     </gap:plugin>
     <plugin name="LaunchMyApp" value="nl.xservices.plugins.LaunchMyApp" />
     <plugin name="WebIntent" value="com.borismus.webintent.WebIntent" />
-    <feature name="WebIntent">
-        <param name="android-package" value="com.borismus.webintent.WebIntent" />
-    </feature>
 </widget>

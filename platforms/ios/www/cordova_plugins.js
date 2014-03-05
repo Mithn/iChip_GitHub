@@ -49,6 +49,13 @@ module.exports = [
         "clobbers": [
             "window.plugins.launchmyapp"
         ]
+    },
+    {
+        "file": "plugins/com.borismus.webintent/www/webintent.js",
+        "id": "com.borismus.webintent.WebIntent",
+        "clobbers": [
+            "WebIntent"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -58,7 +65,8 @@ module.exports.metadata =
     "org.apache.cordova.device": "0.2.8",
     "org.apache.cordova.network-information": "0.2.7",
     "org.apache.cordova.inappbrowser": "0.3.1",
-    "nl.x-services.plugins.launchmyapp": "3.1.1"
+    "nl.x-services.plugins.launchmyapp": "3.1.1",
+    "com.borismus.webintent": "1.0.0"
 }
 // BOTTOM OF METADATA
 });

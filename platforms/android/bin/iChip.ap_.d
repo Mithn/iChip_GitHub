@@ -81,8 +81,11 @@
 /Users/admin/desktop/lifenexus_ichip/ichip/platforms/android/assets/www/js/plugins \
 /Users/admin/desktop/lifenexus_ichip/ichip/platforms/android/assets/www/js/resources.js \
 /Users/admin/desktop/lifenexus_ichip/ichip/platforms/android/assets/www/js/services.js \
-/Users/admin/desktop/lifenexus_ichip/ichip/platforms/android/assets/www/js/plugins/LaunchMyApp.java \
+/Users/admin/desktop/lifenexus_ichip/ichip/platforms/android/assets/www/js/plugins/android \
+/Users/admin/desktop/lifenexus_ichip/ichip/platforms/android/assets/www/js/plugins/ios \
 /Users/admin/desktop/lifenexus_ichip/ichip/platforms/android/assets/www/js/plugins/webintent.js \
+/Users/admin/desktop/lifenexus_ichip/ichip/platforms/android/assets/www/js/plugins/android/LaunchMyApp.js \
+/Users/admin/desktop/lifenexus_ichip/ichip/platforms/android/assets/www/js/plugins/ios/LaunchMyApp.js \
 /Users/admin/desktop/lifenexus_ichip/ichip/platforms/android/assets/www/lib/angular-resource.js \
 /Users/admin/desktop/lifenexus_ichip/ichip/platforms/android/assets/www/lib/angular-resource.min.js \
 /Users/admin/desktop/lifenexus_ichip/ichip/platforms/android/assets/www/lib/angular-route.js \
@@ -90,10 +93,13 @@
 /Users/admin/desktop/lifenexus_ichip/ichip/platforms/android/assets/www/lib/angular.js \
 /Users/admin/desktop/lifenexus_ichip/ichip/platforms/android/assets/www/lib/angular.min.js \
 /Users/admin/desktop/lifenexus_ichip/ichip/platforms/android/assets/www/lib/jquery.min.js \
+/Users/admin/desktop/lifenexus_ichip/ichip/platforms/android/assets/www/plugins/com.borismus.webintent \
 /Users/admin/desktop/lifenexus_ichip/ichip/platforms/android/assets/www/plugins/nl.x-services.plugins.launchmyapp \
 /Users/admin/desktop/lifenexus_ichip/ichip/platforms/android/assets/www/plugins/org.apache.cordova.device \
 /Users/admin/desktop/lifenexus_ichip/ichip/platforms/android/assets/www/plugins/org.apache.cordova.inappbrowser \
 /Users/admin/desktop/lifenexus_ichip/ichip/platforms/android/assets/www/plugins/org.apache.cordova.network-information \
+/Users/admin/desktop/lifenexus_ichip/ichip/platforms/android/assets/www/plugins/com.borismus.webintent/www \
+/Users/admin/desktop/lifenexus_ichip/ichip/platforms/android/assets/www/plugins/com.borismus.webintent/www/webintent.js \
 /Users/admin/desktop/lifenexus_ichip/ichip/platforms/android/assets/www/plugins/nl.x-services.plugins.launchmyapp/www \
 /Users/admin/desktop/lifenexus_ichip/ichip/platforms/android/assets/www/plugins/nl.x-services.plugins.launchmyapp/www/android \
 /Users/admin/desktop/lifenexus_ichip/ichip/platforms/android/assets/www/plugins/nl.x-services.plugins.launchmyapp/www/android/LaunchMyApp.js \

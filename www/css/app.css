@@ -59,6 +59,7 @@ input.inputText {
     font-size: 1.5em;
     line-height: 1.25em;
     text-align: center;
+    text-align-last: center;
     -webkit-box-shadow: none;
     -moz-box-shadow:none;
     box-shadow: none;
@@ -72,6 +73,12 @@ input.inputText {
     border-bottom-right-radius: 0;
     font-family: "proxima_nova_rgregular", Arial,  sans-serif;
 }
+
+.inputText::-webkit-input-placeholder {
+    text-align: center;
+}
+
+
 input[type=submit], .btn {
     display: block;
     width:100%;

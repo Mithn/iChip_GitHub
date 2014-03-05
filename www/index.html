@@ -23,48 +23,27 @@
     <script type="text/javascript" src="lib/angular-resource.js"></script>
     
     <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="cordova_plugins.js"></script>
 
     <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript" src="js/resources.js"></script>
     <script type="text/javascript" src="js/services.js"></script>
     <script type="text/javascript" src="js/controllers.js"></script>
 
+    <!--For iOS-->
+    <!--<script type="text/javascript" src="js/plugins/ios/LaunchMyApp.js"></script>-->
 
-    <script type="text/javascript" src="js/plugins/LaunchMyApp.java"></script>
+    <!--For Android-->
+    <script type="text/javascript" src="js/plugins/android/LaunchMyApp.js"></script>
+
+
     <script type="text/javascript" src="js/plugins/webintent.js"></script>
-
 
     <script type="text/javascript">
 
-        document.addEventListener("deviceready", function () {
-            document.addEventListener("menubutton", menuKeyDown, true);
-            document.addEventListener("backbutton", backKeyDown, true);
-        }, false);
-
-        function menuKeyDown() {
-//            alert('Menu button pressed.');
-        }
-
-        function backKeyDown() {
-//            alert('back button pressed.');
-        }
-
-        //** Get the URL response from url Scheme and parse token from it.
-         // for iOS
-        function handleOpenURL(url) {
-            setTimeout(function() {
-                if(url !== "") {
-                    //Here we can parse the url .
-                    var link = url.split('=');
-                    var token = link[1];
-                    window.localStorage.setItem("token", token);
-                    alert("URL : "+url+"\n Token : "+token);
-                }
-            }, 1000);
-        }
-
-        // For Android
+        // For Android it will not work on iOS
         function handleURLAndroid() {
+            alert("in android part");
             window.plugins.webintent.getUri(function (url) {
                 if (url !== ""){
                     var link = url.split('=');
@@ -73,7 +52,23 @@
                 }
             });
         }
-        //****
+
+
+        // for iOS it will not work on android
+        function handleOpenURL(url) {
+            setTimeout(function() {
+                if(url !== "") {
+                    //Here we can parse the url .
+                    var link = url.split('=');
+                    var token = link[1];
+                    window.localStorage.setItem("token", token);
+                    alert("URL : "+url+"\n Token : "+token);
+
+                    var GoToPage = "#setPassword";
+                    window.location = GoToPage;
+                }
+            }, 0);
+        }
 
     </script>
 
