@@ -14,17 +14,13 @@ ichip.controller("loginController", ["$scope", "$location", "$auth", "$config",
             $scope.showMessage($config.messageEmailPwdIncorrect, "error");
         };
 
-        // if we already have the accountToken, authenticate the user automatically
-        if($auth.accountToken())
-            $auth.authenticate($auth.accountToken(), $scope.getDeviceId(), successCallback, errorCallback);
-
 
         $scope.login = function(){
             if($scope.isValid()){
                 $auth.login({
                     email : $scope.data.email,
                     password : $scope.data.password,
-                    deviceId : "Android-1234"//$scope.getDeviceId()
+                    deviceId : $scope.getDeviceId()
                 }, successCallback, errorCallback);
             }
         };
@@ -34,8 +30,9 @@ ichip.controller("loginController", ["$scope", "$location", "$auth", "$config",
             // see more at http://docs.phonegap.com/en/1.0.0/phonegap_device_device.md.html
             if(window.device)
                 return window.device.uuid;
-            return null;
+            return "fake-device-id";
         };
+
 
         // Validation of Email And Password
         $scope.isValid = function(){
@@ -66,7 +63,14 @@ ichip.controller("loginController", ["$scope", "$location", "$auth", "$config",
             $scope.displayMessage = text;
             $scope.messageType = type;
         };
-    }]);
+
+        // if we already have the accountToken, authenticate the user automatically
+        if($auth.accountToken())
+            $auth.authenticate($auth.accountToken(), $scope.getDeviceId(), successCallback, errorCallback);
+
+
+
+}]);
 
 
 

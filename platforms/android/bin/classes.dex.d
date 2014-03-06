@@ -7,6 +7,7 @@
 /Users/admin/desktop/lifenexus_ichip/ichip/platforms/android/bin/classes/com/ichip/poc/R$string.class \
 /Users/admin/desktop/lifenexus_ichip/ichip/platforms/android/bin/classes/com/ichip/poc/R$xml.class \
 /Users/admin/desktop/lifenexus_ichip/ichip/platforms/android/bin/classes/com/ichip/poc/R.class \
+/Users/admin/desktop/lifenexus_ichip/ichip/platforms/android/bin/classes/com/ichip/poc/WebIntent.class \
 /Users/admin/desktop/lifenexus_ichip/ichip/platforms/android/bin/classes/nl/xservices/plugins/LaunchMyApp.class \
 /Users/admin/desktop/lifenexus_ichip/ichip/platforms/android/bin/classes/org/apache/cordova/device/Device.class \
 /Users/admin/desktop/lifenexus_ichip/ichip/platforms/android/bin/classes/org/apache/cordova/inappbrowser/InAppBrowser$1.class \

@@ -1,6 +1,6 @@
 
 // $auth will contain all the handshake and token management logic
-ichip.service("$auth", ["$config", "$proxy", function($config, $proxy){
+ichip.service("$auth", ["$config", "$authProxy", function($config, $proxy){
     return {
 
         // get the stored account token
@@ -11,10 +11,11 @@ ichip.service("$auth", ["$config", "$proxy", function($config, $proxy){
         // get the session token by authenticating the deviceId and accountToken
         authenticate: function (accountToken, deviceId, successCallback, errorCallback) {
             // get the sessionToken
-            $proxy.getSessionToken({ accountToken : accountToken, deviceId : deviceId }, function(sessionToken){
+            $proxy.getSessionToken({ accountToken : accountToken, deviceId : deviceId },
+                function(response){
 
                 // and save the sessionToken
-                window.localStorage.setItem($config.sessionTokenKey, sessionToken);
+                window.localStorage.setItem($config.sessionTokenKey, response.$data);
                 successCallback();
 
             }, errorCallback);
@@ -24,12 +25,12 @@ ichip.service("$auth", ["$config", "$proxy", function($config, $proxy){
         // performs full authentication
         login : function(credentials, successCallback, errorCallback){
 
-            $proxy.getAccountToken(credentials, function(accountToken){
-                alert("in getAccount token");
-                // save the account accountToken
-                window.localStorage.setItem($config.accountTokenKey, accountToken);
+            $proxy.getAccountToken(credentials, function(response){
 
-                this.authenticate(accountToken, credentials.deviceId, successCallback, errorCallback);
+                // save the account accountToken
+                window.localStorage.setItem($config.accountTokenKey, response.$data);
+
+                this.authenticate(response.$data, credentials.deviceId, successCallback, errorCallback);
 
             }, errorCallback);
         },
@@ -37,7 +38,7 @@ ichip.service("$auth", ["$config", "$proxy", function($config, $proxy){
         // Forget Password Method
         forgetPassword: function(email,successCallback,errorCallback){
 
-            $proxy.sendForgotPassword(email, function(){
+            $proxy.sendResetPasswordEmail(email, function(){
 
                 // Show the Success Message
 
@@ -48,11 +49,18 @@ ichip.service("$auth", ["$config", "$proxy", function($config, $proxy){
         // Set Password Method
         setPassword : function (setPassData, setPassSuccessCallback, setPassErrorCallback){
 
-            $proxy.setPasswordData(setPassData, function() {
+            $proxy.changePassword(setPassData, function() {
 
             }, setPassErrorCallback);
 
         }
+
+    };
+}]);
+
+
+ichip.service("$t", ["$config", function($config){
+    return {
 
     };
 }]);

@@ -74,7 +74,7 @@
     <gap:splash gap:platform="ios" height="768" src="res/screen/ios/screen-ipad-landscape.png" width="1024" />
     <access onlyInBrowser="true" origin="*" />
     <gap:plugin name="nl.x-services.plugins.launchmyapp">
-        <param name="URL_SCHEME" value="iChip" />
+        <param name="URL_SCHEME" value="ichip" />
     </gap:plugin>
     <plugin name="LaunchMyApp" value="nl.xservices.plugins.LaunchMyApp" />
     <plugin name="WebIntent" value="com.borismus.webintent.WebIntent" />

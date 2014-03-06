@@ -41,6 +41,31 @@
 
     <script type="text/javascript">
 
+        // Scripting Code
+        document.addEventListener("deviceready", function () {
+
+            //** Find the Device Platform and Get the URL response from url Scheme and parse token from it.
+
+            if(device.platform === "Android") {
+                // Register Android EVENTs
+                document.addEventListener("menubutton", menuKeyDown, true);
+                document.addEventListener("backbutton", backKeyDown, true);
+                document.addEventListener("deviceready", handleURLAndroid, false);
+
+            } else {
+                // For Other Platform Don't Do anything
+            }
+
+            function menuKeyDown() {
+//            alert('Menu button pressed.');
+            }
+
+            function backKeyDown() {
+//            alert('back button pressed.');
+            }
+
+        }, false);
+
         // For Android it will not work on iOS
         function handleURLAndroid() {
             alert("in android part");

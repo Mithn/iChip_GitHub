@@ -1,41 +1,13 @@
 var ichip = angular.module("ichip", ["ngRoute", "ngResource"]);
 
-// Scripting Code
-document.addEventListener("deviceready", function () {
-
-    //** Find the Device Platform and Get the URL response from url Scheme and parse token from it.
-
-    if(device.platform === "Android") {
-        // Register Android EVENTs
-        document.addEventListener("menubutton", menuKeyDown, true);
-        document.addEventListener("backbutton", backKeyDown, true);
-
-
-    } else if (device.platform === "iOS"){
-        // Don't do anything for back and Menu Button
-
-
-    } else {
-        // For Other Platform Don't Do anything
-    }
-
-    function menuKeyDown() {
-//            alert('Menu button pressed.');
-    }
-
-    function backKeyDown() {
-//            alert('back button pressed.');
-    }
-
-}, false);
-
 
 // Constants Declaration
 ichip.constant("$config", {
-    serviceUrl : "http://localhost/api/:methodName",
-
+    serviceUrl : "http://localhost:81/api/mobile/:controller/:methodName",
     accountTokenKey : "accountToken",
     sessionTokenKey : "sessionToken",
+    translationFolder : "languages",
+    defaultLanguage : "en-us",
 
     // Declaration of Global String
     messageEmailPwdIncorrect : "Email or Password Incorrect",

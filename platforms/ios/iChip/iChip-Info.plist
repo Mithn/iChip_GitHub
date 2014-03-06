@@ -189,6 +189,18 @@
           <string>ichip</string>
         </array>
       </dict>
+      <dict>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>ichip</string>
+        </array>
+      </dict>
+      <dict>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>ichip</string>
+        </array>
+      </dict>
     </array>
   </dict>
 </plist>

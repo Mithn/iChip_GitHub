@@ -3,26 +3,22 @@
         <img src="img/logo-wide.png" height="42" width="167" alt="iChip" />
     </header>
 
-    <form name="forgetForm" class="reset-form" ng-submit="submitForm()">
+    <form name="forgetForm" class="reset-form" ng-submit="sendEmail">
 
         <p class="text-center">Enter your email address to issue a password reset request.</p>
 
         <p class="block alert alert-{{messageType}}" ng-show="displayMessage">{{displayMessage}}</p>
 
-        <input type="text" class="inputText" placeholder="Email" ng-model="data.forgetemail">
+        <input type="text" class="inputText" placeholder="Email" ng-model="data.forgetEmail">
 
         <div>
             <button type="submit" class="btn btn-lg btn-primary btn-block">
                 Reset Password
             </button>
         </div>
+        <div>
+            <a href="#login" class="sticky-btn">Cancel Reset Password</a>
+        </div>
     </form>
 </div>
-<a href="#login" class="sticky-btn">Cancel Reset Password</a>
-</div>
 
-<div id="spinner" style="display: none;" class="barn-doors">
-    <div class="door left"></div>
-    <div class="door right"></div>
-</div>
-</div>

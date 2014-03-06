@@ -19,9 +19,11 @@
 
 package com.ichip.poc;
 
+import org.apache.cordova.CordovaActivity;
+
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import org.apache.cordova.*;
 
 public class iChip extends CordovaActivity 
 {
@@ -39,6 +41,17 @@ public class iChip extends CordovaActivity
 //        super.loadUrl(Config.getStartUrl(), 5000);
 
         super.loadUrl("file:///android_asset/www/index.html", 5000);
+        
+//        final Intent intent = getIntent();
+//        final String args=intent.getDataString();
+//        if(args == null)
+//        {
+//          super.loadUrl("file:///android_asset/www/index.html", 5000);
+//        } else
+//        {
+//          super.loadUrl("file:///android_asset/www/index.html?args=" + args.split("//")[1], 5000);
+//        }
+        
     }
 }
 

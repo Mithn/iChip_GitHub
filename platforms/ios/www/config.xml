@@ -56,7 +56,7 @@
     <access origin="*" onlyInBrowser="true" />
 
     <gap:plugin name="nl.x-services.plugins.launchmyapp">
-        <param name="URL_SCHEME" value="iChip" />
+        <param name="URL_SCHEME" value="ichip" />
     </gap:plugin>
 
     <plugin name="LaunchMyApp" value="nl.xservices.plugins.LaunchMyApp"/>
